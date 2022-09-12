@@ -1,0 +1,28 @@
+header {
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    box-shadow: 0 0 5px 0 #0004;
+}
+
+.header__logo, .header__btn {
+    text-decoration: none;
+    color: black;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.welcome {
+	font-weight: 800;
+	text-align: center;
+    color: rosybrown;
+}
+
+@media (min-width: 1260px) {
+    header {
+        padding-left: calc(50% - 600px);
+        padding-right: calc(50% - 600px);
+    }
+}

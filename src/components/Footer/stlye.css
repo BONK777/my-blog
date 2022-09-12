@@ -1,0 +1,25 @@
+footer {
+    height: 90px;
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 5px 0 #0004;
+}
+
+.footer_made {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.footer__author {
+    text-decoration: none;
+    color: royalblue;
+}
+
+@media (min-width: 1260px) {
+    footer {
+        padding-left: calc(50% - 600px);
+        padding-right: calc(50% - 600px);
+    }
+}
