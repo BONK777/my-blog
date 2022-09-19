@@ -12,12 +12,19 @@ header {
     color: black;
     font-size: 1.25rem;
     font-weight: 600;
+    /* margin: 5px; */
 }
 
 .welcome {
 	font-weight: 800;
 	text-align: center;
-    color: rosybrown;
+    color: royalblue;
+}
+
+.header__menu {
+    width: 55vh;
+    display: flex;
+    justify-content: space-between;
 }
 
 @media (min-width: 1260px) {

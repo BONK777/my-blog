@@ -1,0 +1,37 @@
+[
+    {
+        "name": "День первый",
+        "description": "SMTH",
+        "image": "https://krot.info/uploads/posts/2021-12/1640810215_75-krot-info-p-afrika-yuar-stolitsa-krasivo-foto-81.jpg",
+        "author": "Nikitos",
+        "createdAt": "2022-07-9"
+    },
+    {
+        "name": "День второй",
+        "description": "SMTH text",
+        "image": "https://crosti.ru/patterns/00/1c/cd/40_picture_b9cb96a1.jpg",
+        "author": "Abobus",
+        "createdAt": "2022-07-10"
+    },
+    {
+        "name": "День третий",
+        "description": "SMTH text",
+        "image": "https://crosti.ru/patterns/00/1c/cd/40_picture_b9cb96a1.jpg",
+        "author": "chelik",
+        "createdAt": "2022-07-11"
+    },
+    {
+        "name": "День четвертый",
+        "description": "SMTH text",
+        "image": "https://crosti.ru/patterns/00/1c/cd/40_picture_b9cb96a1.jpg",
+        "author": "NN-kakoy-to",
+        "createdAt": "2022-07-12"
+    },
+    {
+        "name": "День пятый",
+        "description": "SMTH text",
+        "image": "https://crosti.ru/patterns/00/1c/cd/40_picture_b9cb96a1.jpg",
+        "author": "Pasha",
+        "createdAt": "2022-07-13"
+    }
+]
