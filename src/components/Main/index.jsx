@@ -1,23 +1,25 @@
 import React from "react";
 import './style.css';
-import {Link} from 'react-router-dom';
-
-let text = ["Провинция Бриндизи расположена в юго-восточной Италии, простираясь на 1839 км2, второй самой маленькой провинции в регионе после провинции Барлетта-Андрия-Трани. Он был основан в 1927 году из древней Терра-ди-Отранто[en][2]. С Адриатическим морем на востоке оно граничит на севере с провинцией Бари, на западе с провинцией Таранто и на юго-востоке с провинцией Лечче. Северная, центральная и западная части холмистые, с большим количеством леса, с холмами Мурж[en][3], в то время как на северо-западе, гранича с провинциями Таранто и Бари, он находится ниже, с долиной Итрии. Максимальная высота над уровнем моря составляет 414 м, около Сельва-ди-Фазано[it]. Другие пики немного ниже, и все они расположены в северно-центральной области. Длина береговой линии в провинции составляет 80,6 км, частично скалистая, со множеством чередующихся песчаных пляжей, небольших гаваней и заливов. На юге это по существу плоский и широко используется для посева."]
+import {Link,
+    Routes,
+    Route,} from 'react-router-dom';
+import User from "../pages/User";
+import CreatePost from "../pages/CreatePost";
+import Favourite from "../pages/Favourites";
+import AllPosts from "../pages/AllPosts"
+import MainPage from "../pages/MainPage";
+import posts from "../data/posts.json";
 
 export default () => {
     return (
         <main>
-            <h1 className="main__heading">Devs Blog</h1>
-            <div className="cards">
-                   {text[0].split(/[\n\r]{1,2}/g).map((post, i) => <div className="post" key={i}>
-                    {post.split(".").map((p, j, arr) => {
-                        if (j !== arr.length - 1) {
-                            return <p key={j}>{p + "."}</p>
-                        }
-                    })}
-                    </div>)}
-                    <Link to="/allPosts" className="more">Больше постов</Link>
-            </div>
+            <Routes>
+                <Route path="/" element={<MainPage/>}/>
+                <Route path="/user" element={<User/>}/>
+                <Route path="/createPost" element={<CreatePost/>}/>
+                <Route path="/favourite" element={<Favourite/>}/>
+                <Route path="/allPosts" element={<AllPosts data={posts}/>}/>
+            </Routes>
         </main>
     )
 }
