@@ -2,36 +2,41 @@
     {
         "name": "День первый",
         "description": "SMTH",
-        "image": "https://krot.info/uploads/posts/2021-12/1640810215_75-krot-info-p-afrika-yuar-stolitsa-krasivo-foto-81.jpg",
+        "image": "https://phonoteka.org/uploads/posts/2021-03/1616668692_36-p-serii-fon-abstraktsiya-38.jpg",
         "author": "Nikitos",
-        "createdAt": "2022-07-9"
+        "createdAt": "2022-07-9",
+        "id": 1
     },
     {
         "name": "День второй",
         "description": "SMTH text",
-        "image": "https://crosti.ru/patterns/00/1c/cd/40_picture_b9cb96a1.jpg",
+        "image": "https://phonoteka.org/uploads/posts/2021-03/1616668692_36-p-serii-fon-abstraktsiya-38.jpg",
         "author": "Abobus",
-        "createdAt": "2022-07-10"
+        "createdAt": "2022-07-10",
+        "id": 2
     },
     {
         "name": "День третий",
         "description": "SMTH text",
-        "image": "https://crosti.ru/patterns/00/1c/cd/40_picture_b9cb96a1.jpg",
+        "image": "https://phonoteka.org/uploads/posts/2021-03/1616668692_36-p-serii-fon-abstraktsiya-38.jpg",
         "author": "chelik",
-        "createdAt": "2022-07-11"
+        "createdAt": "2022-07-11",
+        "id": 3
     },
     {
         "name": "День четвертый",
         "description": "SMTH text",
-        "image": "https://crosti.ru/patterns/00/1c/cd/40_picture_b9cb96a1.jpg",
+        "image": "https://phonoteka.org/uploads/posts/2021-03/1616668692_36-p-serii-fon-abstraktsiya-38.jpg",
         "author": "NN-kakoy-to",
-        "createdAt": "2022-07-12"
+        "createdAt": "2022-07-12",
+        "id": 4
     },
     {
         "name": "День пятый",
         "description": "SMTH text",
-        "image": "https://crosti.ru/patterns/00/1c/cd/40_picture_b9cb96a1.jpg",
+        "image": "https://phonoteka.org/uploads/posts/2021-03/1616668692_36-p-serii-fon-abstraktsiya-38.jpg",
         "author": "Pasha",
-        "createdAt": "2022-07-13"
+        "createdAt": "2022-07-13",
+        "id": 5
     }
 ]

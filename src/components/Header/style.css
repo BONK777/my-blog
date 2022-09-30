@@ -18,13 +18,12 @@ header {
 .welcome {
 	font-weight: 800;
 	text-align: center;
-    color: royalblue;
+    color: black;
 }
 
 .header__menu {
-    width: 55vh;
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
 }
 
 @media (min-width: 1260px) {

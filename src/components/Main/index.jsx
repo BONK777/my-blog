@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import './style.css';
-import {Link,
+import {
+    Link,
     Routes,
-    Route,} from 'react-router-dom';
+    Route,
+}from 'react-router-dom';
 import User from "../pages/User";
 import CreatePost from "../pages/CreatePost";
 import Favourite from "../pages/Favourites";
 import AllPosts from "../pages/AllPosts"
 import MainPage from "../pages/MainPage";
 import posts from "../data/posts.json";
+import Post from "../pages/Post";
 
 export default () => {
     return (
@@ -16,6 +19,7 @@ export default () => {
             <Routes>
                 <Route path="/" element={<MainPage/>}/>
                 <Route path="/user" element={<User/>}/>
+                <Route path="/post" element={<Post/>}/>
                 <Route path="/createPost" element={<CreatePost/>}/>
                 <Route path="/favourite" element={<Favourite/>}/>
                 <Route path="/allPosts" element={<AllPosts data={posts}/>}/>

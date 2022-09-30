@@ -1,0 +1,91 @@
+.input__info {
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    outline: none;
+    background: transparent;
+    margin: 0;
+    padding: 2px 10px;
+    box-sizing: border-box;
+    border: 1px solid #555;
+    border-radius: 4px;
+    min-height: 38px;
+    font-size: 14px;
+    font-family: monospace;
+    display: block;
+    transition: 0.3s;
+    z-index: 2;
+    position: relative;
+    width: 100%;   
+}
+
+.forma {
+    margin-top: 16px;
+}
+
+.modal__container {
+    position: fixed;
+    background-color: #0004;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.modal {
+    background-color: #fff;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.mb8 {
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.button__submit {
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    outline: none;
+    background: transparent;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    width: 100%;
+    border-radius: 4px;
+    height: 35px;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: black;
+    color: #fff;
+    font-family: monospace;
+}
+
+.button__submit:hover {
+    opacity: 0.8;
+}
+
+.button__close {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 30%;
+    right: 38%;
+    cursor: pointer;
+}
+
+.already {
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: royalblue;
+}

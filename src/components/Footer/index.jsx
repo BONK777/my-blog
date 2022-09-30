@@ -8,7 +8,7 @@ export default () => {
             &copy;{new Date().getFullYear()}
             </span>
             <span className="footer_made"> Made by&nbsp;
-                <a href="https://github.com/BONK777" className="footer__author" target="_blank">Pavel</a>
+                <a href="https://bonk777.github.io/portfolio/" className="footer__author" target="_blank">Pavel</a>
             </span>
         </footer>
     )
