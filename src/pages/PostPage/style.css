@@ -1,0 +1,13 @@
+.post-page {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.post-page__img{
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+}

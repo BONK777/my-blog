@@ -1,24 +1,20 @@
 import React from "react";
-import { Ctx } from "../../../App"
-import  posts from "../../data/posts.json"
-// import './stlye.css';
+import "./style.css";
+import { Link } from 'react-router-dom';
 
-export default ({data}) => {
+const Post = ({ post }) => {
+
     return (
-      <div className="container-post">
-        {data.map(post => 
-          <div className="post" key={post.name}>
-            <div className="post-info">
-              <label className="txt-info">{post.author}</label>
-              <label className="txt-info">{post.name}</label>
-              <span className="txt-info">
-                {post.description[i]}
-              </span>
-              <div className="image-info" style={{
-                backgroundImage: post.image && `url(${post.image})`}}>
-              </div>
+        <div className="post">
+            <img className="post__image" src={post.image !== undefined ? post.image : "https://media.istockphoto.com/id/1399859917/vector/no-image-vector-symbol-missing-available-icon-no-gallery-for-this-moment-placeholder.jpg?b=1&s=170667a&w=0&k=20&c=jBE3Ul6LpRXO5UhCYTmLArfdFc6YEWwhzarxTmtZI2U="} />
+            <div className="post__wrapper">
+                <h3 className="post__title">
+                    <Link to={`/post/${post._id}`}>{post.title}</Link>
+                </h3>
+
             </div>
-          </div>)}
-      </div>
-    )
-}
+        </div>
+    );
+};
+
+export default Post;  

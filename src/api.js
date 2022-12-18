@@ -1,36 +1,7 @@
-/*
-    user {
-        _id: - уникальный ключ пользователя для взаимодействия (+localStorage)
-        name: String,
-        password: String,
-        image: String - ссылка на изображение
-        email: String - Leksa и leksa - два разных логина
-        description: String - описание (информация о пользователе) / статус
-        favorites: Array - масив из id любимых постов
-        posts: Array - массив из id своих постов
-    }
-*/
-
-/*
-    post {
-        _id: String,
-        title: String,
-        author: String - id автора,
-        image: String - ссылка на картинку,
-        isPublished: Boolean - статус поста (открыт для просмотра / закрыт)
-        tags: [String] - список тегов для фильтрации поста
-        createdAt: Date - дата создания (new Date() ) 2022-09-28T18:20
-        updatedAt: Date
-        likes: [String] - id пользователей
-        comments: [String] - id комментария
-    }
-*/
-
 class Api {
     constructor() {
-        this.url = "https://ithub-blog.herokuapp.com/api/"
+        this.url = "https://srv.petiteweb.dev/api/blog/"
     }
-
     getUsers() {
         return fetch(`${this.url}users`)
     }
@@ -59,7 +30,7 @@ class Api {
             },
             body: JSON.stringify(body)
         })
-    }     
+    }
     logIn(body) { // email и password only
         return fetch(`${this.url}users/auth`, {
             method: "POST",
@@ -70,7 +41,20 @@ class Api {
             body: JSON.stringify(body)
         })
     }
-
+    /*
+        post {
+            _id: String,
+            title: String,
+            author: String - id автора,
+            image: String - ссылка на картинку,
+            isPublished: Boolean - статус поста (открыт для просмотра / закрыт)
+            tags: [String] - список тегов для фильтрации поста
+            createdAt: Date - дата создания (new Date() ) 2022-09-28T18:20
+            updatedAt: Date
+            likes: [String] - id пользователей
+            comments: [String] - id комментария
+        }
+    */
     getPosts() { // когда грузится главная страница
         return fetch(`${this.url}posts`)
     }

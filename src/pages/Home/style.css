@@ -1,0 +1,26 @@
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-image: url('../../img/Deep\ Purple\ -\ Ultrawide.png');
+    background-size: cover;
+    height: 70vh;
+    border-radius: 10px;
+    opacity: 0.6;
+}
+.more {
+    cursor: pointer;
+    color: #fff;
+}
+
+.main__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.text {
+    color: #fff;
+}

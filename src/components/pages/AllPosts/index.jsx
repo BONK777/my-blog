@@ -1,24 +1,47 @@
-import React from "react";
-import './style.css';
-import {Link} from 'react-router-dom';
+import React, { useState, useContext, useEffect } from "react";
+import Post from "../Post";
+import "./style.css";
+import { Ctx } from "../../../App";
+import { remove } from "../../../remove";
 
-export default ({data}) => {
+const Posts = () => {
+    const [posts, setPosts] = useState();
+    const [isLoad, setIsLoad] = useState(false);
+    const [postTags, setPostTags] = useState([]);
+    const [querySearch, setQuerySearch] = useState("");
+    const [selectedTags, setSelectedTags] = useState([]);
+    const { api } = useContext(Ctx);
+
+    useEffect(() => {
+        api.getPosts()
+            .then((res) => res.json())
+            .then((data) => {
+                setPosts(data.data);
+                setIsLoad(true);
+            });
+    }, [api]);
+
     return (
-            <div className="cards">
-                {data.map(post => <div
-                 className="post"
-                 key={post.name} 
-                 style={{backgroundImage: `url(${post.image})`}}>
-                    <div className="post__block">
-                        <span>{post.author}</span>
-                        <br/>
-                        <span>{post.name}</span>
-                    </div>
-                    <div className="post__block">
-                        {post.description[0].split(".").map((p, i, arr) => i !== arr.length - 1 && <p key={i}>{p + "."}</p>)}
-                    </div>
-                   <Link to="/post" className="edit">изменить</Link>
-                   </div>)}
+        <section className="posts">
+            <div className="posts-wrapper">
+                <div className="posts__filter">
+                    <input className="posts__filter-input" onChange={(evt) => setQuerySearch(evt.target.value)} type="text" placeholder="Search..." />
+                </div>
+                <div className="cards__post">
+                    {isLoad ? posts.filter(post => {
+                        if (querySearch === "") {
+                            return post;
+                        } else if (post.title && post.title.toLowerCase().includes(querySearch.toLowerCase())) {
+                            return post;
+                        }
+                        return false;
+                    }).map((post) => {
+                        return <Post key={post._id} post={post}></Post>
+                    }) : <p>Загрузка...</p>}
+                </div>
             </div>
-    )
-}
+        </section>
+    );
+};
+
+export default Posts;

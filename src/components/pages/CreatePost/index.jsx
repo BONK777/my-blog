@@ -1,77 +1,62 @@
-import React, {useState, useContext} from "react";
-import './style.css'
-import { Ctx } from '../../../App'; 
-import Api from "../../../api";
-
+import React,{useState, useContext} from "react";
+import { Ctx } from "../../../App";
+import { useNavigate } from "react-router-dom";
+import "./style.css"
 export default () => {
+    const [postId,setPostsId] = useState("");
+    const [postTitle, setPTitle] = useState("");
+    const [postText, setPText] = useState("");
+    const [postImg, setPImg] = useState("");
+    const {db, updDb, updPId,updPTitle,updPText,updPImg,userId, api} = useContext(Ctx);
+    const navigate = useNavigate()
 
-    // const [radio, setRadio] = useState(false);
-    
-    const [namePost, setNamePost] = useState("")
-    const [describePost, setDescribePost] = useState("")
-    const [imagePost, setImagePost] = useState("")
-    const [idPost, setIdPost] = useState("")
-    const {db, updDb, updPId, api, updNamePost, updDescribePost,updImagePost} = useContext(Ctx)
-    const create = e => {
-      e.preventDefault();
-      if (namePost && describePost) {
-          api.addPost( {
-              title: namePost,
-              describe: describePost,
-              img: imagePost
-          })
+
+const addNewPost = e => {
+  e.preventDefault();
+  if (postTitle && postText) {
+      api.addPost( {
+          title: postTitle,
+          text: postText,
+          image: postImg,
+          author: userId
+      })
           .then(res => res.json())
           .then(data => {
               console.log(data.message);
               console.log(data);
-              if(data.message === "ok") {
-                updNamePost(data.namePost);
-                updDescribePost(data.describePost);
-                updImagePost(data.imagePost);
-                localStorage.setItem("namePost", data.data.namePost);
-                localStorage.setItem("describePost", data.data.describePost);
-                localStorage.setItem("imagePost", data.data.imagePost);
+              if(data.message === "ok"){
+                updPTitle(data.postTitle);
+                updPText(data.postText);
+                updPImg(data.postImg);
+                localStorage.setItem("postTitle", data.data.postTitle);
+                localStorage.setItem("postText", data.data.postText);
+                localStorage.setItem("postImg", data.data.postImg);
             }
-              setNamePost("");
-              setDescribePost("");
-              setImagePost("");
+              setPImg("");
+              setPTitle("");
+              setPText("");
           })
-      }
-    }
-
-    return (
-      <div className="container">
-        <div className="heading">Добавить пост</div>
-        <form action="" className="form" onSubmit={create}>
-          <div className="card-box">
-            <input className="text"
-              id="name"
-              type="text"
-              value={namePost}
-              placeholder="Название поста"
-              onChange={(e) => setNamePost(e.target.value)}/>
-            <input className="text"
-              id="describe"
-              type="text"
-              value={describePost}
-              placeholder="Что происходит?"
-              onChange={(e) => setDescribePost(e.target.value)}/>
-          </div>
-          <input className="text"
-              id="img"
-              value={imagePost}
-              placeholder="ссылка на фото поста"
-              onChange={(e) => setImagePost}/>
-          <div className="category">
-            <span className="who__sees">Кто может смотреть ваш пост?</span>
-            <input className="create__input" type="radio" name="" id="" />Только я
-            <input className="create__input" type="radio" name="" id="" />Все
-          </div>
-          <div className="post-img" style={{backgroundImage: imagePost && `url(${imagePost})`}}></div>
-          <div className="button">
-            <input type="submit" onClick={create}/> Создать
-          </div>
-        </form>
-      </div>
-    )
+          navigate("/")
 }
+}
+return (
+  <div>
+    <h1>Create Post</h1>
+    <form className="form-createpost" onSubmit={addNewPost} >
+
+            <input value={postTitle} type="text" id="title" placeholder="Заголовок" onInput={e => setPTitle(e.target.value)}/>
+            <br />
+            <input value={postText} type="text"  className="post-text" placeholder="Пост" onInput={e => setPText(e.target.value)} />
+            <br />
+            <input value={postImg} id="image" placeholder="Ссылка на изображение" onInput={e => setPImg(e.target.value)}/>
+            {/* <br />
+            <span>Видимость</span>
+            <input type="radio" /> вижу
+            <input type="radio" /> не вижу */}
+            <br />
+            <button type="submit" onClick={addNewPost}>Создать пост</button>
+
+        </form>
+    </div>
+  );
+} 

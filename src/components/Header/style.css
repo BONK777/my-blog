@@ -9,7 +9,7 @@ header {
 
 .header__logo, .header__btn {
     text-decoration: none;
-    color: black;
+    color: #f9c2f5;
     font-size: 1.25rem;
     font-weight: 600;
     /* margin: 5px; */
@@ -18,7 +18,7 @@ header {
 .welcome {
 	font-weight: 800;
 	text-align: center;
-    color: black;
+    color: #f9c2f5;
 }
 
 .header__menu {

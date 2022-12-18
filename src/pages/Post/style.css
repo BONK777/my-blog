@@ -1,0 +1,16 @@
+.post {
+  width: 300px;
+  height: 300px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f9c2f5;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.post__image {
+  background-size: cover;
+}
+
